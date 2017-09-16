@@ -4899,3 +4899,532 @@ Processing by QuizzesController#show as HTML
 Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/quizzes/2" for 127.0.0.1 at 2017-09-17 04:58:49 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 504ms (Views: 454.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 04:58:52 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (50.4ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Answer:0x007fe09c0f84d8>):
+    28: 
+    29:       <form action='#'>
+    30:         <%= @answers.each do |a| %>
+    31:         <input type="checkbox" name="answers" value= <%= a.id %> > <%= a.name %> <br />
+    32:         <% end %>
+    33:       </form>
+    34:     </div>
+  
+app/views/questions/show.html.erb:31:in `block in _app_views_questions_show_html_erb___122767069247780109_70301333504220'
+app/views/questions/show.html.erb:30:in `_app_views_questions_show_html_erb___122767069247780109_70301333504220'
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 04:59:15 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 36ms (Views: 28.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/5" for 127.0.0.1 at 2017-09-17 05:00:38 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  Rendered questions/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 61ms (Views: 53.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/6" for 127.0.0.1 at 2017-09-17 05:00:43 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/quizzes/2" for 127.0.0.1 at 2017-09-17 05:01:42 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/quizzes/2" for 127.0.0.1 at 2017-09-17 05:02:27 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:02:30 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 45ms (Views: 37.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/5" for 127.0.0.1 at 2017-09-17 05:02:33 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  Rendered questions/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 48ms (Views: 40.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/5" for 127.0.0.1 at 2017-09-17 05:03:00 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  Rendered questions/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 37ms (Views: 31.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:03:04 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 46ms (Views: 38.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/quizzes/2" for 127.0.0.1 at 2017-09-17 05:03:05 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 46ms (Views: 39.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/quizzes/2" for 127.0.0.1 at 2017-09-17 05:03:07 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:03:10 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 47ms (Views: 38.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:03:12 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 35ms (Views: 28.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:03:24 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 211ms (Views: 173.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:04:10 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:04:12 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2017-09-17 05:05:02 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (1.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 65ms (Views: 55.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/questions/5" for 127.0.0.1 at 2017-09-17 05:05:06 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  Rendered questions/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 47ms (Views: 38.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/questions/6" for 127.0.0.1 at 2017-09-17 05:05:07 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 40ms (Views: 32.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/quizzes/2" for 127.0.0.1 at 2017-09-17 05:05:07 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 2], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 69ms (Views: 39.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/quizzes/3" for 127.0.0.1 at 2017-09-17 05:05:11 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:05:14 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:05:57 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/views/questions/show.html.erb:31: syntax error, unexpected keyword_end
+ze;@output_buffer.append=( end );@output_buffer.safe_append=
+                              ^
+/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/views/questions/show.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/views/questions/show.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/questions/show.html.erb:31: syntax error, unexpected keyword_end
+app/views/questions/show.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/questions/show.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:07:27 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 42ms (Views: 37.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:08:38 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:08:44 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/8" for 127.0.0.1 at 2017-09-17 05:08:47 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 8]]
+  Rendered questions/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 50ms (Views: 41.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/9" for 127.0.0.1 at 2017-09-17 05:08:48 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 55ms (Views: 47.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/questions/9" for 127.0.0.1 at 2017-09-17 05:10:03 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 51ms (Views: 42.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/9" for 127.0.0.1 at 2017-09-17 05:11:48 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 9]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 225ms (Views: 171.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/quizzes/3" for 127.0.0.1 at 2017-09-17 05:12:04 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 50ms (Views: 31.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:12:06 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 76ms (Views: 66.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:12:45 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 120ms (Views: 74.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:13:57 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (17.5ms)
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:13:58 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 334ms (Views: 297.4ms | ActiveRecord: 2.2ms)
+
+
+Completed 200 OK in 141ms (Views: 132.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:14:40 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:15:00 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:16:52 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:18:49 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 38ms (Views: 29.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/7" for 127.0.0.1 at 2017-09-17 05:18:51 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 54ms (Views: 46.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/questions/8" for 127.0.0.1 at 2017-09-17 05:18:53 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 3], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 8]]
+  Rendered questions/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 44ms (Views: 35.9ms | ActiveRecord: 1.4ms)
+
+

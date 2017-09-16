@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/quizzes/:id' => 'quizzes#show', as: :quiz
 
   get '/questions/:id' => 'questions#show', as: :question
+
 end

@@ -10,17 +10,31 @@
   </div>
 	
   <div class="question">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
 
-        <h3>Question <%= @question.order %></h3>
+          <h3>Question <%= @question.order %></h3>
         
-        <h2><%= @question.q_string %></h2>
+          <h2><%= @question.q_string %></h2>
 
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="answers">
+    <div class="container">
+
+      <form action="" method="post">
+        <%= @answers.each do |a| %>
+        <input type="checkbox" name="answers" value="blah" > <%= a.a_string %> <br />
+        <% end %>  
+      </form>
+
+    </div>
+  </div>
+
 
   <div class="next_question">
     <%= link_to "Next Question",question_path(@next_question) if @last_question==0 %>
