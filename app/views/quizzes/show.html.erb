@@ -1,0 +1,26 @@
+<head>
+</head>
+
+<body>
+		
+	<div class="header">
+  		<div class="container">
+        <h1>Quiz App</h1>
+  		</div>
+  </div>
+	
+  <div class="quiz">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <h2><%= @quiz.name %></h2>
+        <h3>Attempted: <%= @quiz.current_question > 0? "Yes" : "No" %> </h3>
+        <h3>Score: <%= @quiz.score %> </h3>
+
+        <%= link_to "Start Quiz!", "/questions/" + @questions.first.id.to_s %>
+
+      </div>
+    </div>
+  </div>
+</div> 

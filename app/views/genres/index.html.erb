@@ -1,0 +1,27 @@
+<head>
+</head>
+
+<body>
+		
+	<div class="header">
+  		<div class="container">
+        <h1>Quiz App</h1>
+  		</div>
+	</div>
+
+	<div class="genres">
+  		<div class="container">
+    		<div class="cards row">
+    
+      			<% @genres.each do |g| %>
+      			<div class="card col-xs-4">
+        			<%= image_tag g.image %>
+        			<h2><%= g.name %></h2>
+      			 <%= link_to g.name, genre_path(g) %>
+            </div>
+      			<% end %>
+
+		    </div>
+  		</div>
+	</div>
+</body>
