@@ -23,7 +23,7 @@
     <div class="container">
 
       <form action="" method="post">
-        <%= @answers.each do |a| %>
+        <% @answers.each do |a| %>
         <input type="checkbox" name="answers" value="blah" > <%= a.a_string %> <br />
         <% end %>  
       </form>
