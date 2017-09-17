@@ -16,21 +16,63 @@
 
 /* App */
 
-html, body {
+* {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  padding: 0; 
+}
+
+body {
+  background-color: #DAD8D2;
+}
+
+.header {
+  background-color: #000;
+  height: 100px;
+  width: 100%;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav ul li {
+  color: #fff;
+  display: block;
+  float: left;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  width: 50%;
+}
+
+.nav ul li a {
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  transition: background 0.5s, color 0.5s;
+  width: 100%;
+}
+
+.nav ul li a:hover {
+  color: #000;
+  background-color: #fff;
+  text-decoration: none;
+  transition: background 0.5s, color 0.5s;
 }
 
 img {
   display:block;
   width:50;
   height:auto
-}
-
-.header {
-  background-color: #00217f;
-  height: 140px;
-  text-align: center;
 }
 
 .header img {
@@ -92,67 +134,6 @@ h2 a {
   padding: 0 20px 20px;
 }
 
-.destination img {
-  width: 100%;
-}
-
-.destination p {
-  color: #0f0f0f;
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.card a,
-.destination a,
-.destination .btn {
- background-color: #00217f ;
- color: #fff;
- font-size: 14px;
- font-weight: 300;
- text-align: center;
- text-decoration: none;
- transition: background-color .5s;
- padding: 6px 30px;
- display: inline-block;
- cursor: pointer;
- margin: 8px 0 20px;
-}
-
-.destination .btn {
-  width: 100px;
-}
-
-.destination a:hover,
-.destination .btn:hover {
-  background-color: #003ec9;
-  transition: background-color .5s;
-}
-
-.destination form {
-  margin: 20px;
-}
-
-.destination form label {
-  width: 100%;
-}
-
-.destination form input {
-  border: 1px solid #d6d6d6;
-  font-family: 'Roboto', sans-serif;
-  margin: 10px 0;
-  padding: 20px;
-  width: calc(100% - 40px);
-}
-
-.destination form input:focus {
-  border: 1px solid #003ec9;
-  font-size: 14px;
-  font-weight: 300;
-  box-shadow: 0;
-  outline: 0;
-  transition: border 0.5s;
-}
-
 /* Grid */
 
 * {
@@ -166,12 +147,7 @@ h2 a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -850,9 +826,7 @@ h2 a {
     top: 5%;
   }
 
-  .card a,
-  .destination a,
-  .destination .btn {
+  .card a {
     padding: 8px 15px;
   }
 }

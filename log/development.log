@@ -5428,3 +5428,1528 @@ Processing by QuestionsController#show as HTML
 Completed 200 OK in 44ms (Views: 35.9ms | ActiveRecord: 1.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170917144717)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "hashed_password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170917144717"]]
+  [1m[35m (131.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_quiz_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_quiz_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_quizzes_on_sub_genre_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_quizzes_on_sub_genre_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sub_genres_on_genre_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sub_genres_on_genre_id' AND type='index'
+[0m
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 20:32:25 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (266.4ms)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fc3dca67d20>:0x00563ca1ad1b80>):
+    17: 				<%= u.text_field :name, :placeholder => "Enter your Name" %>
+    18: 				<%= u.email_field :email, :placeholder => "Enter your Email" %>
+    19: 				<%= u.password_field :password, :placeholder => "Choose a Password" %>
+    20: 				<%= f.submit "Create an Account", class: "btn-submit" %>
+    21: 				<% end %>
+    22: 			</div>
+    23: 		</div>
+  
+app/views/users/new.html.erb:20:in `block in _app_views_users_new_html_erb__2012313100080133188_47409205259240'
+app/views/users/new.html.erb:15:in `_app_views_users_new_html_erb__2012313100080133188_47409205259240'
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 20:32:39 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 494ms (Views: 492.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-17 20:32:45 +0530
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 20:35:08 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 181ms (Views: 178.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 20:39:55 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 298ms (Views: 262.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-17 20:40:24 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ERXLdWn0+crTGd4UpHm57CnCtdvCJ9urCO8dFJsN8yLFmCvhEn4477WHTApC4cWoMhfde1U+dzmcM7CoXDtWGQ==", "user"=>{"name"=>"Tanmai Khanna", "email"=>"abc@g.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x007f7b320baa40>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (131.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (104.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGenres (20170916095203)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170916095203"]]
+  [1m[35m (167.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubGenres (20170916095225)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "sub_genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" varchar, "genre_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_sub_genres_on_genre_id" ON "sub_genres" ("genre_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170916095225"]]
+  [1m[35m (124.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuizzes (20170916112628)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "quizzes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "current_question" integer, "score" integer, "sub_genre_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_quizzes_on_sub_genre_id" ON "quizzes" ("sub_genre_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170916112628"]]
+  [1m[35m (107.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateQuestions (20170916112703)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "q_string" varchar, "quiz_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_questions_on_quiz_id" ON "questions" ("quiz_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170916112703"]]
+  [1m[35m (82.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAnswers (20170916223126)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "a_string" varchar, "correct" boolean, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_answers_on_question_id" ON "answers" ("question_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170916223126"]]
+  [1m[35m (75.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170917144717)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170917144717"]]
+  [1m[35m (71.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-17 15:11:32.097287"], ["updated_at", "2017-09-17 15:11:32.097287"]]
+  [1m[35m (71.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_quiz_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_quiz_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_quizzes_on_sub_genre_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_quizzes_on_sub_genre_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sub_genres_on_genre_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sub_genres_on_genre_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "genres" ("image", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "http://gamerlimit.com/wp-content/uploads/2016/04/original.jpg"], ["name", "Sports"], ["created_at", "2017-09-17 15:11:38.055397"], ["updated_at", "2017-09-17 15:11:38.055397"]]
+  [1m[35m (121.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("image", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "http://baltimoresportsandlife.com/wp-content/uploads/2016/07/Movies.jpg"], ["name", "Movies"], ["created_at", "2017-09-17 15:11:38.181496"], ["updated_at", "2017-09-17 15:11:38.181496"]]
+  [1m[35m (56.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "sub_genres" ("name", "image", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Football"], ["image", "https://static.pexels.com/photos/39562/the-ball-stadion-football-the-pitch-39562.jpeg"], ["genre_id", 1], ["created_at", "2017-09-17 15:11:38.287471"], ["updated_at", "2017-09-17 15:11:38.287471"]]
+  [1m[35m (65.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sub_genres" ("name", "image", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tennis"], ["image", "https://az616578.vo.msecnd.net/files/2016/02/26/635921175574540783-563300402_tennis%203.jpeg"], ["genre_id", 1], ["created_at", "2017-09-17 15:11:38.359413"], ["updated_at", "2017-09-17 15:11:38.359413"]]
+  [1m[35m (87.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "sub_genres" ("name", "image", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tarantino Classics"], ["image", "http://cdn.movieweb.com/img.news.tops/NE41TiY2ZWDr85_3_b/Quentin-Tarantino-Movies-Ranked.jpg"], ["genre_id", 2], ["created_at", "2017-09-17 15:11:38.453422"], ["updated_at", "2017-09-17 15:11:38.453422"]]
+  [1m[35m (69.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sub_genres" ("name", "image", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nolan Classics"], ["image", "https://www.nyfa.edu/student-resources/wp-content/uploads/2014/12/Christopher-Nolan-Collage.jpg"], ["genre_id", 2], ["created_at", "2017-09-17 15:11:38.526130"], ["updated_at", "2017-09-17 15:11:38.526130"]]
+  [1m[35m (72.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubGenre Load (0.2ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "quizzes" ("name", "current_question", "score", "sub_genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Quiz 1"], ["current_question", 0], ["score", 0], ["sub_genre_id", 1], ["created_at", "2017-09-17 15:11:38.621301"], ["updated_at", "2017-09-17 15:11:38.621301"]]
+  [1m[35m (67.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["q_string", "What is Question1?"], ["quiz_id", 1], ["created_at", "2017-09-17 15:11:38.712030"], ["updated_at", "2017-09-17 15:11:38.712030"]]
+  [1m[35m (94.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 1], ["created_at", "2017-09-17 15:11:38.833974"], ["updated_at", "2017-09-17 15:11:38.833974"]]
+  [1m[35m (88.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 1], ["created_at", "2017-09-17 15:11:38.926639"], ["updated_at", "2017-09-17 15:11:38.926639"]]
+  [1m[35m (58.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 1], ["created_at", "2017-09-17 15:11:38.991593"], ["updated_at", "2017-09-17 15:11:38.991593"]]
+  [1m[35m (60.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["q_string", "What is Question2?"], ["quiz_id", 1], ["created_at", "2017-09-17 15:11:39.057593"], ["updated_at", "2017-09-17 15:11:39.057593"]]
+  [1m[35m (104.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 2], ["created_at", "2017-09-17 15:11:39.166547"], ["updated_at", "2017-09-17 15:11:39.166547"]]
+  [1m[35m (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 2], ["created_at", "2017-09-17 15:11:39.247093"], ["updated_at", "2017-09-17 15:11:39.247093"]]
+  [1m[35m (67.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 2], ["created_at", "2017-09-17 15:11:39.319788"], ["updated_at", "2017-09-17 15:11:39.319788"]]
+  [1m[35m (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["q_string", "What is Question3?"], ["quiz_id", 1], ["created_at", "2017-09-17 15:11:39.411555"], ["updated_at", "2017-09-17 15:11:39.411555"]]
+  [1m[35m (67.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 3], ["created_at", "2017-09-17 15:11:39.485950"], ["updated_at", "2017-09-17 15:11:39.485950"]]
+  [1m[35m (68.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 3], ["created_at", "2017-09-17 15:11:39.559217"], ["updated_at", "2017-09-17 15:11:39.559217"]]
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 3], ["created_at", "2017-09-17 15:11:39.642889"], ["updated_at", "2017-09-17 15:11:39.642889"]]
+  [1m[35m (51.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "quizzes" ("name", "current_question", "score", "sub_genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Quiz 2"], ["current_question", 0], ["score", 0], ["sub_genre_id", 1], ["created_at", "2017-09-17 15:11:39.699254"], ["updated_at", "2017-09-17 15:11:39.699254"]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["q_string", "What is Question21?"], ["quiz_id", 2], ["created_at", "2017-09-17 15:11:39.781381"], ["updated_at", "2017-09-17 15:11:39.781381"]]
+  [1m[35m (56.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 4], ["created_at", "2017-09-17 15:11:39.841546"], ["updated_at", "2017-09-17 15:11:39.841546"]]
+  [1m[35m (95.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 4], ["created_at", "2017-09-17 15:11:39.941639"], ["updated_at", "2017-09-17 15:11:39.941639"]]
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 4], ["created_at", "2017-09-17 15:11:40.018993"], ["updated_at", "2017-09-17 15:11:40.018993"]]
+  [1m[35m (68.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["q_string", "What is Question22?"], ["quiz_id", 2], ["created_at", "2017-09-17 15:11:40.095376"], ["updated_at", "2017-09-17 15:11:40.095376"]]
+  [1m[35m (75.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 5], ["created_at", "2017-09-17 15:11:40.179472"], ["updated_at", "2017-09-17 15:11:40.179472"]]
+  [1m[35m (63.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 5], ["created_at", "2017-09-17 15:11:40.249123"], ["updated_at", "2017-09-17 15:11:40.249123"]]
+  [1m[35m (60.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 5], ["created_at", "2017-09-17 15:11:40.316839"], ["updated_at", "2017-09-17 15:11:40.316839"]]
+  [1m[35m (94.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["q_string", "What is Question23?"], ["quiz_id", 2], ["created_at", "2017-09-17 15:11:40.418327"], ["updated_at", "2017-09-17 15:11:40.418327"]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 6], ["created_at", "2017-09-17 15:11:40.501632"], ["updated_at", "2017-09-17 15:11:40.501632"]]
+  [1m[35m (81.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 6], ["created_at", "2017-09-17 15:11:40.592275"], ["updated_at", "2017-09-17 15:11:40.592275"]]
+  [1m[35m (78.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 6], ["created_at", "2017-09-17 15:11:40.686061"], ["updated_at", "2017-09-17 15:11:40.686061"]]
+  [1m[35m (76.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "quizzes" ("name", "current_question", "score", "sub_genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Quiz 3"], ["current_question", 0], ["score", 0], ["sub_genre_id", 2], ["created_at", "2017-09-17 15:11:40.768968"], ["updated_at", "2017-09-17 15:11:40.768968"]]
+  [1m[35m (70.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["q_string", "What is Question31?"], ["quiz_id", 3], ["created_at", "2017-09-17 15:11:40.844907"], ["updated_at", "2017-09-17 15:11:40.844907"]]
+  [1m[35m (73.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 7], ["created_at", "2017-09-17 15:11:40.924217"], ["updated_at", "2017-09-17 15:11:40.924217"]]
+  [1m[35m (81.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 7], ["created_at", "2017-09-17 15:11:41.010084"], ["updated_at", "2017-09-17 15:11:41.010084"]]
+  [1m[35m (78.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 7], ["created_at", "2017-09-17 15:11:41.094157"], ["updated_at", "2017-09-17 15:11:41.094157"]]
+  [1m[35m (75.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["q_string", "What is Question32?"], ["quiz_id", 3], ["created_at", "2017-09-17 15:11:41.176010"], ["updated_at", "2017-09-17 15:11:41.176010"]]
+  [1m[35m (70.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 8], ["created_at", "2017-09-17 15:11:41.251186"], ["updated_at", "2017-09-17 15:11:41.251186"]]
+  [1m[35m (76.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 8], ["created_at", "2017-09-17 15:11:41.333459"], ["updated_at", "2017-09-17 15:11:41.333459"]]
+  [1m[35m (72.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 8], ["created_at", "2017-09-17 15:11:41.412245"], ["updated_at", "2017-09-17 15:11:41.412245"]]
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["q_string", "What is Question33?"], ["quiz_id", 3], ["created_at", "2017-09-17 15:11:41.504197"], ["updated_at", "2017-09-17 15:11:41.504197"]]
+  [1m[35m (82.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 9], ["created_at", "2017-09-17 15:11:41.595025"], ["updated_at", "2017-09-17 15:11:41.595025"]]
+  [1m[35m (91.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 9], ["created_at", "2017-09-17 15:11:41.693942"], ["updated_at", "2017-09-17 15:11:41.693942"]]
+  [1m[35m (70.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 9], ["created_at", "2017-09-17 15:11:41.770706"], ["updated_at", "2017-09-17 15:11:41.770706"]]
+  [1m[35m (92.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubGenre Load (0.2ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "quizzes" ("name", "current_question", "score", "sub_genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Quiz 4"], ["current_question", 0], ["score", 0], ["sub_genre_id", 3], ["created_at", "2017-09-17 15:11:41.870948"], ["updated_at", "2017-09-17 15:11:41.870948"]]
+  [1m[35m (66.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["q_string", "What is Question41?"], ["quiz_id", 4], ["created_at", "2017-09-17 15:11:41.943298"], ["updated_at", "2017-09-17 15:11:41.943298"]]
+  [1m[35m (60.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 10], ["created_at", "2017-09-17 15:11:42.008677"], ["updated_at", "2017-09-17 15:11:42.008677"]]
+  [1m[35m (89.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 10], ["created_at", "2017-09-17 15:11:42.103189"], ["updated_at", "2017-09-17 15:11:42.103189"]]
+  [1m[35m (95.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 10], ["created_at", "2017-09-17 15:11:42.204811"], ["updated_at", "2017-09-17 15:11:42.204811"]]
+  [1m[35m (151.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["q_string", "What is Question42?"], ["quiz_id", 4], ["created_at", "2017-09-17 15:11:42.362277"], ["updated_at", "2017-09-17 15:11:42.362277"]]
+  [1m[35m (58.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 11], ["created_at", "2017-09-17 15:11:42.427901"], ["updated_at", "2017-09-17 15:11:42.427901"]]
+  [1m[35m (77.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 11], ["created_at", "2017-09-17 15:11:42.511212"], ["updated_at", "2017-09-17 15:11:42.511212"]]
+  [1m[35m (81.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 11], ["created_at", "2017-09-17 15:11:42.599918"], ["updated_at", "2017-09-17 15:11:42.599918"]]
+  [1m[35m (94.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["q_string", "What is Question43?"], ["quiz_id", 4], ["created_at", "2017-09-17 15:11:42.702112"], ["updated_at", "2017-09-17 15:11:42.702112"]]
+  [1m[35m (68.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 12], ["created_at", "2017-09-17 15:11:42.779149"], ["updated_at", "2017-09-17 15:11:42.779149"]]
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 12], ["created_at", "2017-09-17 15:11:42.875291"], ["updated_at", "2017-09-17 15:11:42.875291"]]
+  [1m[35m (65.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 12], ["created_at", "2017-09-17 15:11:42.945218"], ["updated_at", "2017-09-17 15:11:42.945218"]]
+  [1m[35m (95.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "quizzes" ("name", "current_question", "score", "sub_genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Quiz 5"], ["current_question", 0], ["score", 0], ["sub_genre_id", 3], ["created_at", "2017-09-17 15:11:43.045291"], ["updated_at", "2017-09-17 15:11:43.045291"]]
+  [1m[35m (65.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["q_string", "What is Question51?"], ["quiz_id", 5], ["created_at", "2017-09-17 15:11:43.116790"], ["updated_at", "2017-09-17 15:11:43.116790"]]
+  [1m[35m (143.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 13], ["created_at", "2017-09-17 15:11:43.267820"], ["updated_at", "2017-09-17 15:11:43.267820"]]
+  [1m[35m (113.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 13], ["created_at", "2017-09-17 15:11:43.387716"], ["updated_at", "2017-09-17 15:11:43.387716"]]
+  [1m[35m (75.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 13], ["created_at", "2017-09-17 15:11:43.467881"], ["updated_at", "2017-09-17 15:11:43.467881"]]
+  [1m[35m (80.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["q_string", "What is Question52?"], ["quiz_id", 5], ["created_at", "2017-09-17 15:11:43.554331"], ["updated_at", "2017-09-17 15:11:43.554331"]]
+  [1m[35m (67.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 14], ["created_at", "2017-09-17 15:11:43.627963"], ["updated_at", "2017-09-17 15:11:43.627963"]]
+  [1m[35m (110.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 14], ["created_at", "2017-09-17 15:11:43.743827"], ["updated_at", "2017-09-17 15:11:43.743827"]]
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 14], ["created_at", "2017-09-17 15:11:43.818713"], ["updated_at", "2017-09-17 15:11:43.818713"]]
+  [1m[35m (102.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["q_string", "What is Question53?"], ["quiz_id", 5], ["created_at", "2017-09-17 15:11:43.927349"], ["updated_at", "2017-09-17 15:11:43.927349"]]
+  [1m[35m (68.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 15], ["created_at", "2017-09-17 15:11:44.002038"], ["updated_at", "2017-09-17 15:11:44.002038"]]
+  [1m[35m (97.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 15], ["created_at", "2017-09-17 15:11:44.104479"], ["updated_at", "2017-09-17 15:11:44.104479"]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 15], ["created_at", "2017-09-17 15:11:44.209434"], ["updated_at", "2017-09-17 15:11:44.209434"]]
+  [1m[35m (67.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "quizzes" ("name", "current_question", "score", "sub_genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Quiz 4"], ["current_question", 0], ["score", 0], ["sub_genre_id", 4], ["created_at", "2017-09-17 15:11:44.282135"], ["updated_at", "2017-09-17 15:11:44.282135"]]
+  [1m[35m (67.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["q_string", "What is Question61?"], ["quiz_id", 6], ["created_at", "2017-09-17 15:11:44.356414"], ["updated_at", "2017-09-17 15:11:44.356414"]]
+  [1m[35m (90.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 16], ["created_at", "2017-09-17 15:11:44.452959"], ["updated_at", "2017-09-17 15:11:44.452959"]]
+  [1m[35m (59.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 16], ["created_at", "2017-09-17 15:11:44.520633"], ["updated_at", "2017-09-17 15:11:44.520633"]]
+  [1m[35m (88.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 16], ["created_at", "2017-09-17 15:11:44.617427"], ["updated_at", "2017-09-17 15:11:44.617427"]]
+  [1m[35m (68.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["q_string", "What is Question62?"], ["quiz_id", 6], ["created_at", "2017-09-17 15:11:44.694631"], ["updated_at", "2017-09-17 15:11:44.694631"]]
+  [1m[35m (84.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 17], ["created_at", "2017-09-17 15:11:44.783215"], ["updated_at", "2017-09-17 15:11:44.783215"]]
+  [1m[35m (62.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 17], ["created_at", "2017-09-17 15:11:44.851661"], ["updated_at", "2017-09-17 15:11:44.851661"]]
+  [1m[35m (69.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 17], ["created_at", "2017-09-17 15:11:44.925943"], ["updated_at", "2017-09-17 15:11:44.925943"]]
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "questions" ("order", "q_string", "quiz_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["q_string", "What is Question63?"], ["quiz_id", 6], ["created_at", "2017-09-17 15:11:45.009772"], ["updated_at", "2017-09-17 15:11:45.009772"]]
+  [1m[35m (69.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option1"], ["correct", "t"], ["question_id", 18], ["created_at", "2017-09-17 15:11:45.085972"], ["updated_at", "2017-09-17 15:11:45.085972"]]
+  [1m[35m (96.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option2"], ["correct", "f"], ["question_id", 18], ["created_at", "2017-09-17 15:11:45.190617"], ["updated_at", "2017-09-17 15:11:45.190617"]]
+  [1m[35m (53.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "answers" ("a_string", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["a_string", "Option3"], ["correct", "f"], ["question_id", 18], ["created_at", "2017-09-17 15:11:45.249389"], ["updated_at", "2017-09-17 15:11:45.249389"]]
+  [1m[35m (51.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for 127.0.0.1 at 2017-09-17 20:42:03 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 20:44:45 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 194ms (Views: 175.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-17 20:44:51 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HcujfqO/4If5GrxFwIv34gBYeLCGSz0oQjZIvGscWu/JRkPq2DUhop+ELlsmE4umG40QEBFSkbrW6uUArCr/1A==", "user"=>{"name"=>"as", "email"=>"as@d", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "as"], ["email", "as@d"], ["password_digest", "$2a$10$g/RvycLx3hcOxkfEKnMtFOuC8XeuiQDBGYR7WrlftOm5C97T.adEK"], ["created_at", "2017-09-17 15:14:51.604567"], ["updated_at", "2017-09-17 15:14:51.604567"]]
+  [1m[35m (232.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 312ms (ActiveRecord: 233.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 20:44:51 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.6ms)
+Completed 200 OK in 31ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/login" for 127.0.0.1 at 2017-09-17 20:56:58 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 259ms (Views: 249.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 20:57:09 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 21:12:14 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 324ms (Views: 306.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-17 21:12:21 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"65gDHDEe21i1GdIA/elTntRWemk26SojgAVLQADVI3I/FeOISpQafdOHQB4bcS/az4MSyaHwhrEU2eb8x+OGSQ==", "user"=>{"name"=>"a", "email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["email", "a@a.com"], ["password_digest", "$2a$10$.I0LV7a14avmbQY93GYi3.QvrNWf77ksRc3mB/juwwUcj1Y3oryTW"], ["created_at", "2017-09-17 15:42:21.522220"], ["updated_at", "2017-09-17 15:42:21.522220"]]
+  [1m[35m (145.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 231ms (ActiveRecord: 148.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 21:12:21 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 21:12:41 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/controllers/sessions_controller.rb:8: syntax error, unexpected { arg, expecting ')'
+authenticate(params[:session]{:password}) #If user exists an
+                              ^
+/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:8: syntax error, unexpected { arg, expecting ')'
+app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2017-09-17 21:13:23 +0530
+  
+SyntaxError (/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/controllers/sessions_controller.rb:8: syntax error, unexpected { arg, expecting ')'
+authenticate(params[:session]{:password}) #If user exists an
+                              ^
+/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/controllers/sessions_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:8: syntax error, unexpected { arg, expecting ')'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for 127.0.0.1 at 2017-09-17 21:13:40 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/controllers/sessions_controller.rb:8: syntax error, unexpected { arg, expecting ')'
+authenticate(params[:session]{:password}) #If user exists an
+                              ^
+/home/khannatanmai/Documents/SSAD_Class/Assignment2/Quiz-Website/app/controllers/sessions_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:8: syntax error, unexpected { arg, expecting ')'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for 127.0.0.1 at 2017-09-17 21:14:16 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 195ms (Views: 186.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 21:14:24 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i483DZeRer2zU7oVA2wAPpP8fD7/Dq1PHZkorgTSlm9fAteZ7Bu7mNXNKAvl9Hx6iCkUnmgXAd2JRYUSw+QzVA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 154ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 21:14:24 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 21:14:35 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hTRFkYXzmE+GrBpEnUiq4KHvqScnqVp3nW1cEtKHVdlRuaUF/nlZauAyiFp70NakujrBh7Cw9uUJsfGuFbHw4g==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 21:14:36 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 21:59:44 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 706ms (ActiveRecord: 13.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x0055594edbf770>:0x0055594eda6c20>
+Did you mean?  logout_path
+               font_path):
+    15: 
+    16:     <div class="header">
+    17:       <div class="container">
+    18:         <%= link_to root_path do %>
+    19:           <img src="http://s3.amazonaws.com/codecademy-content/courses/rails-auth/img/fotofoto-logo.svg" width="80" height="80"> &#12501; &#65387; &#12488; &#12501; &#65387; &#12488;
+    20:         <% end %>
+    21: 
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___2869886733837551365_46921026934620'
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:00:35 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 79ms (Views: 75.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-17 22:00:46 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Nkw46V05dmxEQ3SyYc2aSUmVbmYL4gSmBLWB9Y0X+cPiwdh9JrO3SSLd5qyHVeYNUkAGxpz7qDSQaSxJSiFc+A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:00:46 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:00:51 +0530
+Processing by GenresController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:00:51 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-17 22:00:55 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:00:58 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 22:01:02 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wPR57lOXudfHYi6tvjwJKnSAD76EUEgj09V3u6NgWljN2MrC/tS2Q03ReQvdbuaI9hUPIHIKTjeqzQKP+b4jRA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:01:02 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:01:07 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2017-09-17 22:01:09 +0530
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSubGenre Load (0.2ms)[0m  [1m[34mSELECT "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."genre_id" = ?[0m  [["genre_id", 1]]
+  Rendered genres/show.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 129ms (Views: 66.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/sub_genres/1" for 127.0.0.1 at 2017-09-17 22:01:11 +0530
+Processing by SubGenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubGenre Load (0.2ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sub_genres/show.html.erb within layouts/application
+  [1m[36mQuiz Load (0.4ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."sub_genre_id" = ?[0m  [["sub_genre_id", 1]]
+  Rendered sub_genres/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 181ms (Views: 53.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2017-09-17 22:01:13 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 78ms (Views: 40.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-09-17 22:01:14 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 85ms (Views: 46.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/questions/2" for 127.0.0.1 at 2017-09-17 22:01:16 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 2]]
+  Rendered questions/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 42.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/3" for 127.0.0.1 at 2017-09-17 22:01:17 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 3]]
+  Rendered questions/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2017-09-17 22:01:18 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-17 22:01:22 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rmxKWorPugYYA+oYBd9CsexIs7gUp2SIPkYT1J0XJS164arO8UV7I36deAbjRz71953bGIO+yBqqmr5oWiGAFg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:01:22 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:02:38 +0530
+Processing by GenresController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:02:38 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:02:48 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:03:11 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:08:26 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 243ms (Views: 242.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:08:49 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:09:20 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:09:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:10:06 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:10:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 62ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:10:37 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 22:10:49 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t8gc1sZ/soDmfvchkh9NpwA77EKE0vX+SONP31Q7W+FjRfxCvfVzpYDgZT90hzHjG+6E4hPLWWzcP+Jjkw3+2g==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:10:49 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 30ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:10:53 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2017-09-17 22:11:02 +0530
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSubGenre Load (0.3ms)[0m  [1m[34mSELECT "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."genre_id" = ?[0m  [["genre_id", 1]]
+  Rendered genres/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sub_genres/1" for 127.0.0.1 at 2017-09-17 22:11:04 +0530
+Processing by SubGenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sub_genres/show.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."sub_genre_id" = ?[0m  [["sub_genre_id", 1]]
+  Rendered sub_genres/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2017-09-17 22:11:06 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-09-17 22:11:08 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-17 22:11:12 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L6fuzhXsGf/Y4sh5ebQlN5ykke2iwPi1UjBhxYIE2Dj7Kg5abmbY2r58WmefLFlzh3H5TTXZVCfG7Mx5RTJ9Aw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:11:12 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:11:16 +0530
+Processing by GenresController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:11:16 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:14:38 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:14:51 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:16:47 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:19:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:23:04 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 76ms (Views: 74.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:23:06 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:23:30 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:23:48 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 22:23:57 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDjfCyHg7vzhSFrDd2Ps4aVB+zqS0RN0y+FVWPsji9fAtT+fWmov2YfWyN2R+5ClvpSTmgXIv+ZfPfjkPBUu7A==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (49.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 137ms (ActiveRecord: 49.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:23:57 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 26ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:24:01 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 49ms (Views: 32.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-17 22:24:07 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m/AMMdCeSYwkdXknZ5Y2L3T+EqN08DoJnM9roX6eMdNPfeylqxSIqULr6zmBDkprbyt6A+PplpsIE8YduaiU6A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:24:07 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (7.0ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:24:10 +0530
+Processing by GenresController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:24:10 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 22:25:56 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5eKbWkEjJM/M/v2JFuezlqsqWzDUU+fics3cBHP+ZtvGmr5Eo5NtlmtaejCw+KKQXnBzFRI4w0dF5rM1vlcoA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 82ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:25:56 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:26:00 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2017-09-17 22:26:09 +0530
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."genre_id" = ?[0m  [["genre_id", 1]]
+  Rendered genres/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 84ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sub_genres/1" for 127.0.0.1 at 2017-09-17 22:26:13 +0530
+Processing by SubGenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sub_genres/show.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."sub_genre_id" = ?[0m  [["sub_genre_id", 1]]
+  Rendered sub_genres/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 44ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2017-09-17 22:26:15 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 68ms (Views: 43.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-09-17 22:26:18 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 71ms (Views: 40.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/2" for 127.0.0.1 at 2017-09-17 22:26:22 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 2]]
+  Rendered questions/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/3" for 127.0.0.1 at 2017-09-17 22:26:23 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 4], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 3]]
+  Rendered questions/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 85ms (Views: 77.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2017-09-17 22:26:24 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 70ms (Views: 43.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-17 22:26:27 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XJ6R7NOjwAARGFsX+Xh9+//wuu+Cpuv78hkBoTSASceIE3F4qCkBJXeGyQkf4AG/5CXSTxW/R2lmxawd87bs/A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:26:27 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:29:12 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:29:15 +0530
+Processing by GenresController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-17 22:29:15 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-17 22:29:19 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oYUs1AV425fBJXTgSTjReaD38X/0JL0q3CgPryLxzJd1CMxAfvIasqe75v6voK09uyKZ32M9EbhI9KIT5cdprA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-17 22:29:19 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khannatanmai/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:29:24 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2017-09-17 22:29:26 +0530
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSubGenre Load (0.2ms)[0m  [1m[34mSELECT "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."genre_id" = ?[0m  [["genre_id", 1]]
+  Rendered genres/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:30:34 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 106ms (Views: 103.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:30:45 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 42.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:31:21 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-09-17 22:31:46 +0530
+Processing by GenresController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2017-09-17 22:34:20 +0530
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSubGenre Load (0.2ms)[0m  [1m[34mSELECT "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."genre_id" = ?[0m  [["genre_id", 1]]
+  Rendered genres/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 69ms (Views: 65.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sub_genres/1" for 127.0.0.1 at 2017-09-17 22:34:24 +0530
+Processing by SubGenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubGenre Load (0.1ms)[0m  [1m[34mSELECT  "sub_genres".* FROM "sub_genres" WHERE "sub_genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sub_genres/show.html.erb within layouts/application
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes" WHERE "quizzes"."sub_genre_id" = ?[0m  [["sub_genre_id", 1]]
+  Rendered sub_genres/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2017-09-17 22:34:25 +0530
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-09-17 22:34:28 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 2], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/questions/2" for 127.0.0.1 at 2017-09-17 22:34:31 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? ORDER BY "questions"."id" DESC LIMIT ?[0m  [["quiz_id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."quiz_id" = ? AND "questions"."order" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["quiz_id", 1], ["order", 3], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 2]]
+  Rendered questions/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+

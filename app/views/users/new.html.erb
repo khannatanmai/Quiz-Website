@@ -1,0 +1,21 @@
+
+<body>
+	<div class="login">
+		<div class="container">
+			<div class="form">
+
+				<h1>Sign up on QuizApp!</h1>
+
+
+				<%= form_for(@user) do |u| %>
+
+				<%= u.text_field :name, :placeholder => "Enter your Name" %>
+				<%= u.email_field :email, :placeholder => "Enter your Email" %>
+				<%= u.password_field :password, :placeholder => "Choose a Password" %>
+				<%= u.submit "Create an Account", class: "btn-submit" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>
+

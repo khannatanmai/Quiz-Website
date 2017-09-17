@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170916223126) do
+ActiveRecord::Schema.define(version: 20170917144717) do
 
   create_table "answers", force: :cascade do |t|
     t.string "a_string"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(version: 20170916223126) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_sub_genres_on_genre_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+	before_action :require_user, only: [:show]
+
 	def show
 		@question = Question.find(params[:id])
 		@answers = @question.answers
