@@ -6,8 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#USERS
+
+User.create(name: 'Tanmai Khanna', email: 'khanna.tanmai@hotmail.com', role: 'admin', password_digest: "$2a$10$hPMU3.am3u3cY0c/wxAAwu049KWhJDr026xHdqmsijdAM0L.R6LKa")
+
+#GENRES
+
 g1 = Genre.create(name: 'Sports', image: 'http://gamerlimit.com/wp-content/uploads/2016/04/original.jpg')
 g2 = Genre.create(name: 'Movies', image: 'http://baltimoresportsandlife.com/wp-content/uploads/2016/07/Movies.jpg')
+
+
+#SUBGENRES
 
 sg1 = SubGenre.create(name: 'Football', genre_id: g1.id, image: 'https://static.pexels.com/photos/39562/the-ball-stadion-football-the-pitch-39562.jpeg')
 sg2 = SubGenre.create(name: 'Tennis', genre_id: g1.id, image: 'https://az616578.vo.msecnd.net/files/2016/02/26/635921175574540783-563300402_tennis%203.jpeg')
@@ -15,6 +24,7 @@ sg3 = SubGenre.create(name: 'Tarantino Classics', genre_id: g2.id, image: 'http:
 sg4 = SubGenre.create(name: 'Nolan Classics', genre_id: g2.id, image: 'https://www.nyfa.edu/student-resources/wp-content/uploads/2014/12/Christopher-Nolan-Collage.jpg')
 
 
+#QUIZZES, QUESTIONS AND ANSWERS
 qz1 = Quiz.create(sub_genre_id: sg1.id, name: 'Quiz 1', current_question: 0, score: 0)
 
 q1 = Question.create(order: 1, q_string: 'What is Question1?', quiz_id: qz1.id)
