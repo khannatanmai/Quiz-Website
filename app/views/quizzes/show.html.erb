@@ -11,8 +11,7 @@
       <div class="col-xs-12">
 
         <h2><%= @quiz.name %></h2>
-        <h3>Attempted: <%= @quiz.current_question > 0? "Yes" : "No" %> </h3>
-        <h3>Score: <%= @quiz.score %> </h3>
+        <h3>Score: <%= @score.score %> </h3>
 
         <h2><%= link_to "Start Quiz!", "/questions/" + @questions.first.id.to_s %></h2>
 

@@ -25,7 +25,7 @@ sg4 = SubGenre.create(name: 'Nolan Classics', genre_id: g2.id, image: 'https://w
 
 
 #QUIZZES, QUESTIONS AND ANSWERS
-qz1 = Quiz.create(sub_genre_id: sg1.id, name: 'Quiz 1', current_question: 0, score: 0)
+qz1 = Quiz.create(sub_genre_id: sg1.id, name: 'Basic Clubs Knowledge')
 
 q1 = Question.create(order: 1, q_string: 'Which clubs has Christiano Ronaldo played for?', quiz_id: qz1.id)
 Answer.create(question_id: q1.id, a_string: 'Manchester United', correct: true)
@@ -43,25 +43,25 @@ Answer.create(question_id: q3.id, a_string: 'Real Madrid', correct: true)
 Answer.create(question_id: q3.id, a_string: 'Manchester United', correct: false)
 
 
-qz2 = Quiz.create(sub_genre_id: sg1.id, name: 'Quiz 2', current_question: 0, score: 0)
+qz2 = Quiz.create(sub_genre_id: sg1.id, name: 'World Cup Fever')
 
-q4 = Question.create(order: 1, q_string: 'What is Question21?', quiz_id: qz2.id)
-Answer.create(question_id: q4.id, a_string: 'Option1', correct: true)
-Answer.create(question_id: q4.id, a_string: 'Option2', correct: false)
-Answer.create(question_id: q4.id, a_string: 'Option3', correct: false)
+q4 = Question.create(order: 1, q_string: 'Which team won in the FIFA World Cup 2010?', quiz_id: qz2.id)
+Answer.create(question_id: q4.id, a_string: 'Germany', correct: false)
+Answer.create(question_id: q4.id, a_string: 'Brazil', correct: false)
+Answer.create(question_id: q4.id, a_string: 'Spain', correct: true)
 
-q5 = Question.create(order: 2, q_string: 'What is Question22?', quiz_id: qz2.id)
-Answer.create(question_id: q5.id, a_string: 'Option1', correct: true)
-Answer.create(question_id: q5.id, a_string: 'Option2', correct: false)
-Answer.create(question_id: q5.id, a_string: 'Option3', correct: false)
+q5 = Question.create(order: 2, q_string: 'Which country is hosting FIFA World Cup 2018?', quiz_id: qz2.id)
+Answer.create(question_id: q5.id, a_string: 'Russia', correct: true)
+Answer.create(question_id: q5.id, a_string: 'Qatar', correct: false)
+Answer.create(question_id: q5.id, a_string: 'India', correct: false)
 
-q6 = Question.create(order: 3, q_string: 'What is Question23?', quiz_id: qz2.id)
-Answer.create(question_id: q6.id, a_string: 'Option1', correct: true)
-Answer.create(question_id: q6.id, a_string: 'Option2', correct: false)
-Answer.create(question_id: q6.id, a_string: 'Option3', correct: false)
+q6 = Question.create(order: 3, q_string: 'Select the teams which have won the World Cup more than 3 times', quiz_id: qz2.id)
+Answer.create(question_id: q6.id, a_string: 'Italy', correct: true)
+Answer.create(question_id: q6.id, a_string: 'Spain', correct: false)
+Answer.create(question_id: q6.id, a_string: 'Germany', correct: true)
 
 
-qz3 = Quiz.create(sub_genre_id: sg2.id, name: 'Quiz 3', current_question: 0, score: 0)
+qz3 = Quiz.create(sub_genre_id: sg2.id, name: 'Quiz 3')
 
 q7 = Question.create(order: 1, q_string: 'What is Question31?', quiz_id: qz3.id)
 Answer.create(question_id: q7.id, a_string: 'Option1', correct: true)
@@ -79,7 +79,7 @@ Answer.create(question_id: q9.id, a_string: 'Option2', correct: false)
 Answer.create(question_id: q9.id, a_string: 'Option3', correct: false)
 
 
-qz4 = Quiz.create(sub_genre_id: sg3.id, name: 'Quiz 4', current_question: 0, score: 0)
+qz4 = Quiz.create(sub_genre_id: sg3.id, name: 'Quiz 4')
 
 q10 = Question.create(order: 1, q_string: 'What is Question41?', quiz_id: qz4.id)
 Answer.create(question_id: q10.id, a_string: 'Option1', correct: true)
@@ -97,7 +97,7 @@ Answer.create(question_id: q12.id, a_string: 'Option2', correct: false)
 Answer.create(question_id: q12.id, a_string: 'Option3', correct: false)
 
 
-qz5 = Quiz.create(sub_genre_id: sg3.id, name: 'Quiz 5', current_question: 0, score: 0)
+qz5 = Quiz.create(sub_genre_id: sg3.id, name: 'Quiz 5')
 
 q13 = Question.create(order: 1, q_string: 'What is Question51?', quiz_id: qz5.id)
 Answer.create(question_id: q13.id, a_string: 'Option1', correct: true)
@@ -115,7 +115,7 @@ Answer.create(question_id: q15.id, a_string: 'Option2', correct: false)
 Answer.create(question_id: q15.id, a_string: 'Option3', correct: false)
 
 
-qz6 = Quiz.create(sub_genre_id: sg4.id, name: 'Quiz 4', current_question: 0, score: 0)
+qz6 = Quiz.create(sub_genre_id: sg4.id, name: 'Quiz 6')
 
 q16 = Question.create(order: 1, q_string: 'What is Question61?', quiz_id: qz6.id)
 Answer.create(question_id: q16.id, a_string: 'Option1', correct: true)

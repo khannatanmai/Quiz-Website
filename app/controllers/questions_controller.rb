@@ -1,11 +1,15 @@
 class QuestionsController < ApplicationController
-	before_action :require_user, only: [:show]
+	before_action :require_user, only: [:show, :submit]
 
 	def show
 		@question = Question.find(params[:id])
 		@answers = @question.answers 
+		@quiz_id = @question.quiz_id
 
-		
+		current_quiz = Quiz.find_by_id(@quiz_id).id
+		current_user_id = session[:user_id]
+		@current_score = Score.find_by(params[quiz_id: current_quiz, user_id: current_user_id])
+	
 	end
 
 	def submit #Checking if answer is correct
@@ -28,8 +32,20 @@ class QuestionsController < ApplicationController
 			end 
 		end
 
+		@quiz_id = @question.quiz_id
+
+		current_quiz = Quiz.find_by_id(@quiz_id)
+		current_user_id = session[:user_id]
+		@current_score = Score.find_by(params[quiz_id: current_quiz, user_id: current_user_id])
+	
+
+		score = @current_score.score
+
 		if @is_answer_correct==1
 			puts "**************CORRECT ANSWER****************"
+			@current_score.update(quiz_id: current_quiz, user_id: current_user_id, score: score+10)
+			@current_score.save
+
 		else
 			puts "*************INCORRECT ANSWER****************"
 		end
@@ -37,7 +53,7 @@ class QuestionsController < ApplicationController
 		current_order = @question.order
 
 		@last_question = 0
-		@quiz_id = @question.quiz_id
+		
 
 		if current_order >= Question.where(quiz_id: @quiz_id).last.order
 			@last_question = 1	
