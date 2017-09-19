@@ -27,20 +27,20 @@ sg4 = SubGenre.create(name: 'Nolan Classics', genre_id: g2.id, image: 'https://w
 #QUIZZES, QUESTIONS AND ANSWERS
 qz1 = Quiz.create(sub_genre_id: sg1.id, name: 'Quiz 1', current_question: 0, score: 0)
 
-q1 = Question.create(order: 1, q_string: 'What is Question1?', quiz_id: qz1.id)
-Answer.create(question_id: q1.id, a_string: 'Option1', correct: true)
-Answer.create(question_id: q1.id, a_string: 'Option2', correct: false)
-Answer.create(question_id: q1.id, a_string: 'Option3', correct: false)
+q1 = Question.create(order: 1, q_string: 'Which clubs has Christiano Ronaldo played for?', quiz_id: qz1.id)
+Answer.create(question_id: q1.id, a_string: 'Manchester United', correct: true)
+Answer.create(question_id: q1.id, a_string: 'Manchester City', correct: false)
+Answer.create(question_id: q1.id, a_string: 'Real Madrid', correct: true)
 
-q2 = Question.create(order: 2, q_string: 'What is Question2?', quiz_id: qz1.id)
-Answer.create(question_id: q2.id, a_string: 'Option1', correct: true)
-Answer.create(question_id: q2.id, a_string: 'Option2', correct: false)
-Answer.create(question_id: q2.id, a_string: 'Option3', correct: false)
+q2 = Question.create(order: 2, q_string: 'Which players belong to Barcelona club as of 2017?', quiz_id: qz1.id)
+Answer.create(question_id: q2.id, a_string: 'Lionel Messi', correct: true)
+Answer.create(question_id: q2.id, a_string: 'Sanchez', correct: true)
+Answer.create(question_id: q2.id, a_string: 'Puyol', correct: false)
 
-q3 = Question.create(order: 3, q_string: 'What is Question3?', quiz_id: qz1.id)
-Answer.create(question_id: q3.id, a_string: 'Option1', correct: true)
-Answer.create(question_id: q3.id, a_string: 'Option2', correct: false)
-Answer.create(question_id: q3.id, a_string: 'Option3', correct: false)
+q3 = Question.create(order: 3, q_string: 'Which club has the most major league wins out of these?', quiz_id: qz1.id)
+Answer.create(question_id: q3.id, a_string: 'Barcelona', correct: false)
+Answer.create(question_id: q3.id, a_string: 'Real Madrid', correct: true)
+Answer.create(question_id: q3.id, a_string: 'Manchester United', correct: false)
 
 
 qz2 = Quiz.create(sub_genre_id: sg1.id, name: 'Quiz 2', current_question: 0, score: 0)

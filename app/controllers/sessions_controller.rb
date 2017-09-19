@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
 		if @user && @user.authenticate(params[:session][:password]) #If user exists and the password stored is same
 			session[:user_id] = @user.id #Add user_id to session
-			redirect_to '/'
+			redirect_to '/genres'
 		else
 			redirect_to '/login'
 			@login

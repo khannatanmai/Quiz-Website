@@ -3,7 +3,36 @@ class QuestionsController < ApplicationController
 
 	def show
 		@question = Question.find(params[:id])
+		@answers = @question.answers 
+
+		
+	end
+
+	def submit #Checking if answer is correct
+		@question = Question.find(params[:id])
 		@answers = @question.answers
+
+		@is_answer_correct = 1 #Assume Answer is correct
+
+		@answers.each do |ans|
+			puts ans.correct
+
+			symbol = ("a" + ans.id.to_s).to_sym
+			puts params[symbol]
+			if ans.correct == true && params[symbol] != '1'
+				@is_answer_correct = 0 #Answer for question is NOT correct
+				break
+			elsif ans.correct == false && params[symbol] == '1'
+				@is_answer_correct = 0 #Answer for question is NOT correct
+				break
+			end 
+		end
+
+		if @is_answer_correct==1
+			puts "**************CORRECT ANSWER****************"
+		else
+			puts "*************INCORRECT ANSWER****************"
+		end
 
 		current_order = @question.order
 

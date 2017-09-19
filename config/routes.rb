@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'genres#main'
   get '/genres' => 'genres#index'
   get '/genres/:id' => 'genres#show', as: :genre
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get '/quizzes/:id' => 'quizzes#show', as: :quiz
 
   get '/questions/:id' => 'questions#show', as: :question
+  post '/questions/submit/:id' => 'questions#submit'
 
   get '/signup' => 'users#new'
   resources :users

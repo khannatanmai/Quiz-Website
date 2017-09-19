@@ -20,20 +20,17 @@
   </div>
 
   <div class="answers">
-    <div class="container">
-
-      <form action="" method="post">
+    <div class="form">
+      <% action_path = "/questions/submit/" + @question.id.to_s %>
+      <%= form_tag(action_path, method: :post) do %>
         <% @answers.each do |a| %>
-        <input type="checkbox" name="answers" value="blah" > <%= a.a_string %> <br />
-        <% end %>  
-      </form>
-
+          <%= check_box_tag(("a"+a.id.to_s).to_sym) %>
+              <%= label_tag(("a"+a.id.to_s).to_sym, a.a_string) %>
+        <% end %>
     </div>
-  </div>
-
-
-  <div class="next_question">
-    <%= link_to "Next Question",question_path(@next_question) if @last_question==0 %>
-    <%= link_to "Finish Quiz",'/quizzes/'+@quiz_id.to_s unless @last_question==0 %>
+    <div class="actions">
+      <%= submit_tag("Submit") %>
+    </div>
+      <% end %>
   </div>
 </div>

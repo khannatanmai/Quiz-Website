@@ -14,9 +14,12 @@
         <h3>Attempted: <%= @quiz.current_question > 0? "Yes" : "No" %> </h3>
         <h3>Score: <%= @quiz.score %> </h3>
 
-        <%= link_to "Start Quiz!", "/questions/" + @questions.first.id.to_s %>
+        <h2><%= link_to "Start Quiz!", "/questions/" + @questions.first.id.to_s %></h2>
 
       </div>
     </div>
   </div>
+  <br />
+   <%= link_to "Back to Main", "/genres" %>
+
 </div> 

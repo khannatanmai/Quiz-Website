@@ -1,0 +1,11 @@
+
+<% if @is_answer_correct == 1 %>
+	<h1>Congratulations! Correct Answer! :)</h1>
+
+<% else %>
+	<h1>Sorry! Wrong Answer! :(</h1>
+
+<% end %>
+
+<h2><%= link_to "Next Question",question_path(@next_question) if @last_question==0 %></h2>
+<h2><%= link_to "Finish Quiz",'/quizzes/'+@quiz_id.to_s unless @last_question==0 %></h2>
