@@ -1,0 +1,23 @@
+<h1>Leaderboard</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>User ID</th>
+			<th>User</th>
+			<th>Quiz</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @scores.each do |s| %>
+		<tr>
+			<td><%= s.user_id %></td>
+			<td><%= User.find_by(id: s.user_id).name %></td>
+			<td><%= Quiz.find_by(id: s.quiz_id).name %></td>
+			<td><%= s.score %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

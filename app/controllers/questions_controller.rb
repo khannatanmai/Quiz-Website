@@ -8,8 +8,12 @@ class QuestionsController < ApplicationController
 
 		current_quiz = Quiz.find_by_id(@quiz_id).id
 		current_user_id = session[:user_id]
-		@current_score = Score.find_by(params[quiz_id: current_quiz, user_id: current_user_id])
+		@current_score = Score.find_by(quiz_id: current_quiz, user_id: current_user_id)
 	
+		if @question.order == 1 #FIRST QUESTION
+			@current_score.update(score: 0)
+			@current_score.save
+		end
 	end
 
 	def submit #Checking if answer is correct
@@ -36,16 +40,16 @@ class QuestionsController < ApplicationController
 
 		current_quiz = Quiz.find_by_id(@quiz_id)
 		current_user_id = session[:user_id]
-		@current_score = Score.find_by(params[quiz_id: current_quiz, user_id: current_user_id])
+		@current_score = Score.find_by(quiz_id: current_quiz, user_id: current_user_id)
 	
 
 		score = @current_score.score
 
 		if @is_answer_correct==1
 			puts "**************CORRECT ANSWER****************"
-			@current_score.update(quiz_id: current_quiz, user_id: current_user_id, score: score+10)
+			score = score + 10
+			@current_score.update(score: score)
 			@current_score.save
-
 		else
 			puts "*************INCORRECT ANSWER****************"
 		end

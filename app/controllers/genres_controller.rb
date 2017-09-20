@@ -1,7 +1,7 @@
 class GenresController < ApplicationController
 	before_action :require_user, only: [:index, :show]
 	def index
-		@genres = Genre.all
+		@genres = Genre.all 
 	end
 
 	def show

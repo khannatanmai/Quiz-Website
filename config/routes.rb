@@ -25,4 +25,8 @@ Rails.application.routes.draw do
   patch '/users/:id' => 'users#update'
   get '/users/:id/edit' => 'users#edit'
 
+  get '/scores' => 'scores#index'
+  get '/scores/genre/:id' => 'scores#show_by_genre'
+  get '/scores/sub_genre/:id' => 'scores#show_by_subgenre'
+
 end
